@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>teste</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="testarImpressao02()">
+    Imprimir (Modo 2)
+  </ion-button>
+
+  <ion-button (click)="imprimir()">
+    Imprimir teste
+  </ion-button>
+
+  <ul>
+    <li><a href="https://ionicacademy.com/create-pdf-files-ionic-pdfmake/">Link 1</a></li>
+    <li><a href="http://pdfmake.org/index.html#/gettingstarted">Link 2</a></li>    
+  </ul>
+
+  <button ion-button full (click)="createPdf()">Create PDF</button>
+  <button ion-button full (click)="downloadPdf()" color="secondary" [disabled]="!pdfObj">Download PDF</button>
+ 
+
+
+  <ion-card *ngIf="createdCode">
+    <ngx-qrcode qrc-element-type="canvas" [(qrc-value)]="createdCode"></ngx-qrcode>
+ 
+    <ion-card-content>
+     
+    </ion-card-content>
+  </ion-card>
+</ion-content>
